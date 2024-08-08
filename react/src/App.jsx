@@ -5,6 +5,9 @@ import Register from "./pages/Register";
 import Login from "./pages/Login";
 import { useContext } from "react";
 import { AuthContext } from "./context/AuthContext";
+import Create from "./pages/Create";
+import Details from "./pages/Details";
+import Update from "./pages/Update";
 
 const App = () => {
     const { user } = useContext(AuthContext);
@@ -15,7 +18,7 @@ const App = () => {
             children: [
                 {
                     index: true,
-                    element: user ? <Index /> : <Login />,
+                    element: <Index />,
                 },
                 {
                     path: "/register",
@@ -24,6 +27,18 @@ const App = () => {
                 {
                     path: "/login",
                     element: user ? <Index /> : <Login />,
+                },
+                {
+                    path: "/create",
+                    element: user ? <Create /> : <Login />,
+                },
+                {
+                    path: "/details/:id",
+                    element: <Details />,
+                },
+                {
+                    path: "/update/:id",
+                    element: user ? <Update /> : <Index />,
                 },
             ],
         },

@@ -38,6 +38,9 @@ const Nav = () => {
                             <li className="px-5 max-sm:px-2 hover:text-blue-700 font-mono cursor-none">
                                 <Link to={"#"}>Hello...{user.name}</Link>
                             </li>
+                            <li className="px-5 max-sm:px-2 hover:text-blue-700 font-mono ">
+                                <Link to={"/create"}>Create</Link>
+                            </li>
                             <li className="px-5 max-sm:px-2 hover:text-blue-700 font-mono">
                                 <form onClick={LogoutHandler}>
                                     <button>Logout</button>
